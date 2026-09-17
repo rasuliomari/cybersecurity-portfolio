@@ -1,0 +1,59 @@
+<Timeline
+                title="Education"
+                items={[
+                  {
+                    year: "2025 — PRESENT",
+                    title: "BSc Cybersecurity & Digital Forensics Engineering",
+                    place: "University of Dodoma",
+                  },
+                  {
+                    year: "2021 — 2024",
+                    title: "Ordinary Diploma in Computer Science",
+                    place: "University of Dar es Salaam",
+                  },
+                  {
+                    year: "2013 — 2015",
+                    title: "Certificate of Education",
+                    place: "Korogwe teachers College",
+                  },
+                  {
+                    year: "2009 — 2012",
+                    title: "Certificate of Secondary Education",
+                    place: "Horton Secondary School",
+                  },
+                  {
+                    year: "2002 — 2008",
+                    title: "certificate of Primary Education",
+                    place: "Majengo Primary School",
+                  },
+                ]}
+              />
+
+              <Timeline
+                title="Experience"
+                items={[
+                  {
+                    year: "2026",
+                    title: "Ethical Hacking & Penetration Testing",
+                    place: "University of Dodoma",
+                  },
+                 {
+                    year: "2026",
+                    title: "Project Practicum — Java programming",
+                    place: "University of Dodoma",
+                  },{
+                    year: "2024",
+                    title: "Project Practicum — Application Development",
+                    place: "University of Dar es Salaam",
+                  },
+                  {
+                    year: "2023",
+                    title: "Facilitator — Smart Girls in ICT",
+                    place: "Y4C Club, University of Dar es Salaam",
+                  },
+                  {
+                    year: "2018 — PRESENT",
+                    title: "Teaching",
+                    place: "Kimembe Primary School",
+                  },
+                ]}
