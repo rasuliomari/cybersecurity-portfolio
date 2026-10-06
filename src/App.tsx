@@ -1,13 +1,22 @@
+
 import {
   ArrowDownRight,
   ArrowUpRight,
+  BriefcaseBusiness,
   Code2,
+  Download,
   FileSearch,
+  GraduationCap,
+  Mail,
   Menu,
+  Network,
+  Phone,
   Shield,
+  Terminal,
   X,
 } from "lucide-react";
 import { useState } from "react";
+import profilePhoto from "./assets/rasuli-omari.jpg";
 
 const projects = [
   {
@@ -15,7 +24,7 @@ const projects = [
     type: "APPLICATION SECURITY",
     title: "Secure Web Application",
     description:
-      "A full-stack web application focused on secure authentication, API protection, input validation, data handling, and secure application architecture.",
+      "A full-stack web application focused on secure authentication, API protection, input validation, database security, and secure application architecture.",
     technologies: ["React", "Node.js", "REST API", "SQL"],
   },
   {
@@ -85,16 +94,16 @@ function App() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <div className="min-h-screen bg-[#07090c] text-white">
-      {/* NAVBAR */}
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.08] bg-[#07090c]/95 backdrop-blur-xl">
-        <div className="mx-auto flex h-[74px] max-w-[1320px] items-center justify-between px-5 sm:px-8">
+    <div className="min-h-screen bg-[#05070a] text-white">
+      {/* NAVIGATION */}
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.08] bg-[#05070a]/90 backdrop-blur-xl">
+        <div className="mx-auto flex h-[76px] max-w-[1320px] items-center justify-between px-5 sm:px-8">
           <a
             href="#home"
             onClick={closeMenu}
-            className="flex items-center gap-3"
+            className="group flex items-center gap-3"
           >
-            <div className="flex h-10 w-10 items-center justify-center border border-cyan-400/40 bg-cyan-400/[0.04] font-mono text-xs text-cyan-400">
+            <div className="flex h-10 w-10 items-center justify-center border border-cyan-400/40 bg-cyan-400/[0.04] font-mono text-xs font-bold text-cyan-400 transition group-hover:border-cyan-400 group-hover:bg-cyan-400 group-hover:text-black">
               RO
             </div>
 
@@ -133,20 +142,24 @@ function App() {
         </div>
 
         {menuOpen && (
-          <div className="border-t border-white/[0.08] bg-[#07090c] px-6 py-7 md:hidden">
+          <div className="border-t border-white/[0.08] bg-[#05070a] px-6 py-7 md:hidden">
             <div className="flex flex-col gap-6">
               <NavLink href="#about" onClick={closeMenu}>
                 About
               </NavLink>
+
               <NavLink href="#expertise" onClick={closeMenu}>
                 Expertise
               </NavLink>
+
               <NavLink href="#projects" onClick={closeMenu}>
                 Projects
               </NavLink>
+
               <NavLink href="#experience" onClick={closeMenu}>
                 Experience
               </NavLink>
+
               <NavLink href="#contact" onClick={closeMenu}>
                 Contact
               </NavLink>
@@ -159,9 +172,9 @@ function App() {
         {/* HERO */}
         <section
           id="home"
-          className="relative flex min-h-screen items-center overflow-hidden border-b border-white/[0.08] pt-[74px]"
+          className="relative min-h-screen overflow-hidden border-b border-white/[0.08] pt-[76px]"
         >
-          {/* GRID */}
+          {/* Background grid */}
           <div
             className="pointer-events-none absolute inset-0 opacity-[0.035]"
             style={{
@@ -171,11 +184,11 @@ function App() {
             }}
           />
 
-          {/* GLOW */}
-          <div className="pointer-events-none absolute left-[35%] top-[35%] h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-400/[0.06] blur-[150px]" />
+          {/* Background glow */}
+          <div className="pointer-events-none absolute left-[40%] top-[35%] h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-400/[0.07] blur-[150px]" />
 
-          <div className="relative mx-auto grid w-full max-w-[1320px] gap-14 px-5 py-20 sm:px-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-8">
-            {/* HERO TEXT */}
+          <div className="relative mx-auto grid min-h-[calc(100vh-76px)] w-full max-w-[1320px] items-center gap-14 px-5 py-20 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+            {/* HERO CONTENT */}
             <div>
               <div className="mb-7 flex items-center gap-3">
                 <span className="h-px w-12 bg-cyan-400" />
@@ -185,24 +198,29 @@ function App() {
                 </span>
               </div>
 
-              <h1 className="max-w-4xl text-[clamp(3.2rem,7.5vw,7.4rem)] font-bold leading-[0.86] tracking-[-0.07em]">
-                Securing
+              <p className="mb-5 font-mono text-xs tracking-[0.18em] text-zinc-500">
+                HELLO, I&apos;M
+              </p>
+
+              <h1 className="max-w-4xl text-[clamp(3.2rem,7vw,7rem)] font-bold leading-[0.87] tracking-[-0.07em]">
+                Eng. Rasuli
                 <br />
-                <span className="text-zinc-500">systems.</span>
-                <br />
-                <span className="text-cyan-400">Investigating</span>
-                <br />
-                <span className="text-zinc-100">evidence.</span>
+                <span className="text-zinc-500">Omari.</span>
               </h1>
 
-              <p className="mt-9 max-w-2xl text-[15px] leading-8 text-zinc-400 sm:text-lg">
-                I’m{" "}
-                <strong className="font-semibold text-white">
-                  Eng. Rasuli Omari
-                </strong>
-                , a Cybersecurity & Digital Forensics Engineer, Penetration
-                Tester, and Full-Stack Software Engineer building and
-                analyzing secure digital systems.
+              <h2 className="mt-7 max-w-2xl text-xl font-medium leading-8 text-zinc-300 sm:text-2xl">
+                Cybersecurity & Digital Forensics Engineer
+                <span className="text-cyan-400">.</span>
+                <br />
+                <span className="text-zinc-500">
+                  Penetration Tester & Software Engineer
+                </span>
+              </h2>
+
+              <p className="mt-7 max-w-2xl text-[15px] leading-8 text-zinc-400 sm:text-base">
+                I build secure digital systems, investigate digital evidence,
+                assess application and network security, and develop practical
+                technology solutions with security at the core.
               </p>
 
               <div className="mt-9 flex flex-wrap gap-3">
@@ -210,7 +228,7 @@ function App() {
                   href="#projects"
                   className="group inline-flex items-center gap-3 bg-cyan-400 px-6 py-3.5 text-xs font-bold text-black transition hover:bg-cyan-300"
                 >
-                  EXPLORE MY WORK
+                  VIEW MY WORK
                   <ArrowUpRight
                     size={16}
                     className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
@@ -218,104 +236,124 @@ function App() {
                 </a>
 
                 <a
-                  href="#about"
-                  className="inline-flex items-center border border-white/15 px-6 py-3.5 text-xs font-semibold text-zinc-300 transition hover:border-white/40 hover:text-white"
+                  href="/Rasuli-Omari-CV.pdf"
+                  download
+                  className="inline-flex items-center gap-2 border border-white/15 px-6 py-3.5 text-xs font-semibold text-zinc-300 transition hover:border-cyan-400/50 hover:text-cyan-400"
                 >
-                  ABOUT ME
+                  <Download size={15} />
+                  DOWNLOAD CV
                 </a>
               </div>
 
-              <div className="mt-10 flex flex-wrap items-center gap-5 text-xs">
+              <div className="mt-9 flex flex-wrap items-center gap-5 text-xs">
                 <a
                   href="https://github.com/rasuliomari"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-zinc-500 transition hover:text-cyan-400"
+                  className="inline-flex items-center gap-2 text-zinc-500 transition hover:text-cyan-400"
                 >
-                  GitHub
+                  <span className="text-sm font-bold">GH</span>
                 </a>
 
                 <a
                   href="https://www.linkedin.com/in/rasuli-omari-2807bb264/"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-zinc-500 transition hover:text-cyan-400"
+                  className="inline-flex items-center gap-2 text-zinc-500 transition hover:text-cyan-400"
                 >
+                  <span className="text-sm font-bold">LI</span>
                   LinkedIn
                 </a>
 
-                <span className="h-px w-8 bg-white/15" />
+                <a
+                  href="mailto:rasuliomari4@gmail.com"
+                  className="inline-flex items-center gap-2 text-zinc-500 transition hover:text-cyan-400"
+                >
+                  <Mail size={14} />
+                  Email
+                </a>
+                <a
+                  href="tel:+255657707046"
+                  className="flex items-center gap-3 text-slate-300 transition hover:text-cyan-400"
+                >
+                  <Phone size={20} />
+                  <span>+255 657 707 046</span>
+                </a>
+              </div>
+
+              <div className="mt-8 flex items-center gap-3">
+                <span className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.8)]" />
 
                 <span className="font-mono text-[9px] tracking-[0.2em] text-zinc-600">
-                  DODOMA · TANZANIA
+                  AVAILABLE FOR COLLABORATION
                 </span>
               </div>
             </div>
 
-            {/* TECHNICAL VISUAL */}
-            <div className="hidden lg:block">
-              <div className="relative mx-auto max-w-[500px]">
-                <div className="absolute -inset-10 rounded-full bg-cyan-400/[0.035] blur-3xl" />
+            {/* PROFESSIONAL PHOTO */}
+            <div className="relative flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-[480px]">
+                {/* glow */}
+                <div className="absolute -inset-8 rounded-full bg-cyan-400/[0.06] blur-3xl" />
 
-                <div className="relative border border-white/[0.1] bg-[#0b0f14] p-5 shadow-2xl">
-                  {/* terminal header */}
-                  <div className="flex items-center justify-between border-b border-white/[0.08] pb-4">
-                    <div className="flex items-center gap-2">
-                      <span className="h-2 w-2 rounded-full bg-cyan-400" />
-                      <span className="font-mono text-[9px] tracking-[0.2em] text-zinc-500">
-                        SECURITY_CONSOLE
-                      </span>
-                    </div>
+                {/* decorative square */}
+                <div className="absolute -right-4 -top-4 h-24 w-24 border-r border-t border-cyan-400/40" />
 
-                    <span className="font-mono text-[8px] text-zinc-700">
-                      RO-SEC-01
-                    </span>
-                  </div>
+                <div className="absolute -bottom-4 -left-4 h-24 w-24 border-b border-l border-cyan-400/40" />
 
-                  {/* terminal body */}
-                  <div className="mt-5 space-y-5 font-mono text-[11px]">
-                    <div>
-                      <div className="text-zinc-600">
-                        $ ./security_profile --status
-                      </div>
-                      <div className="mt-2 text-cyan-400">
-                        SYSTEM STATUS: OPERATIONAL
-                      </div>
-                    </div>
+                {/* image frame */}
+                <div className="relative overflow-hidden border border-white/[0.12] bg-[#0b0f14] p-2 shadow-2xl">
+                  <div className="relative aspect-[4/5] overflow-hidden">
+                    <img
+                      src={profilePhoto}
+                      alt="Eng. Rasuli Omari"
+                      className="h-full w-full object-cover object-center grayscale-[15%] transition duration-700 hover:scale-[1.03] hover:grayscale-0"
+                    />
 
-                    <div className="grid grid-cols-2 gap-3">
-                      <StatusBox label="NETWORK" value="SECURE" />
-                      <StatusBox label="FORENSICS" value="READY" />
-                      <StatusBox label="APPLICATION" value="ASSESSED" />
-                      <StatusBox label="THREAT" value="MONITORED" />
-                    </div>
+                    {/* image overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#05070a]/70 via-transparent to-transparent" />
 
-                    <div>
-                      <div className="text-zinc-600">
-                        $ ./skills --list
+                    {/* scan line */}
+                    <div className="pointer-events-none absolute left-0 right-0 top-1/2 h-px bg-cyan-400/20" />
+
+                    {/* image label */}
+                    <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
+                      <div>
+                        <div className="font-mono text-[8px] tracking-[0.25em] text-cyan-400">
+                          PROFESSIONAL PROFILE
+                        </div>
+
+                        <div className="mt-1 text-sm font-semibold">
+                          RASULI OMARI
+                        </div>
                       </div>
 
-                      <div className="mt-3 space-y-2">
-                        <SkillLine name="Cybersecurity" />
-                        <SkillLine name="Digital Forensics" />
-                        <SkillLine name="Penetration Testing" />
-                        <SkillLine name="Full-Stack Engineering" />
+                      <div className="font-mono text-[8px] text-zinc-500">
+                        RO-SEC-01
                       </div>
-                    </div>
-
-                    <div className="border-t border-white/[0.08] pt-4 text-zinc-600">
-                      <span className="text-cyan-400">●</span> ENGINEERED FOR
-                      SECURITY
                     </div>
                   </div>
                 </div>
 
-                <div className="absolute -bottom-7 -left-7 border border-cyan-400/20 bg-[#07090c] px-5 py-4">
+                {/* location badge */}
+                <div className="absolute -bottom-7 -right-4 border border-cyan-400/20 bg-[#07090c] px-5 py-4 shadow-xl sm:-right-7">
                   <div className="font-mono text-[8px] tracking-[0.2em] text-zinc-600">
-                    LOCATION
+                    BASED IN
                   </div>
+
                   <div className="mt-1 text-xs font-semibold">
-                    DODOMA, TZ
+                    TANZANIA
+                  </div>
+                </div>
+
+                {/* status badge */}
+                <div className="absolute -left-4 top-10 border border-white/[0.1] bg-[#07090c]/95 px-4 py-3 backdrop-blur sm:-left-8">
+                  <div className="flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-cyan-400" />
+
+                    <span className="font-mono text-[8px] tracking-[0.15em] text-zinc-400">
+                      SECURITY / ACTIVE
+                    </span>
                   </div>
                 </div>
               </div>
@@ -356,10 +394,10 @@ function App() {
                 </p>
 
                 <p className="mt-6 max-w-3xl text-base leading-8 text-zinc-500">
-                  I’m interested in how digital systems are built, how they
-                  become vulnerable, how security incidents can be investigated,
-                  and how thoughtful engineering can create safer and more
-                  reliable technology.
+                  I&apos;m interested in understanding how digital systems are
+                  built, how they become vulnerable, how security incidents can
+                  be investigated, and how thoughtful engineering can create
+                  safer and more reliable technology.
                 </p>
 
                 <div className="mt-10 grid grid-cols-3 border-t border-white/[0.08] pt-7">
@@ -373,7 +411,10 @@ function App() {
         </section>
 
         {/* EXPERTISE */}
-        <section id="expertise" className="border-b border-white/[0.08] bg-[#090c10]">
+        <section
+          id="expertise"
+          className="border-b border-white/[0.08] bg-[#090c10]"
+        >
           <div className="mx-auto max-w-[1320px] px-5 py-24 sm:px-8 lg:py-28">
             <SectionTitle number="02" label="EXPERTISE" />
 
@@ -427,6 +468,53 @@ function App() {
           </div>
         </section>
 
+        {/* SECURITY FOCUS */}
+        <section className="border-b border-white/[0.08] bg-[#05070a]">
+          <div className="mx-auto max-w-[1320px] px-5 py-20 sm:px-8 lg:py-24">
+            <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
+              <div>
+                <p className="font-mono text-[9px] font-semibold tracking-[0.25em] text-cyan-400">
+                  SECURITY MINDSET
+                </p>
+
+                <h2 className="mt-4 text-3xl font-semibold tracking-tight">
+                  Think like an engineer.
+                  <br />
+                  <span className="text-zinc-500">
+                    Investigate like an analyst.
+                  </span>
+                </h2>
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-2">
+                <FocusItem
+                  icon={<Network size={18} />}
+                  title="Network Security"
+                  text="Understanding networks, traffic, protocols, and attack surfaces."
+                />
+
+                <FocusItem
+                  icon={<Shield size={18} />}
+                  title="Application Security"
+                  text="Building and assessing applications with security throughout the lifecycle."
+                />
+
+                <FocusItem
+                  icon={<FileSearch size={18} />}
+                  title="Digital Investigation"
+                  text="Examining digital evidence and documenting technical findings."
+                />
+
+                <FocusItem
+                  icon={<Terminal size={18} />}
+                  title="Security Testing"
+                  text="Reconnaissance, vulnerability assessment, controlled testing, and reporting."
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* PROJECTS */}
         <section id="projects" className="border-b border-white/[0.08]">
           <div className="mx-auto max-w-[1320px] px-5 py-24 sm:px-8 lg:py-28">
@@ -440,8 +528,8 @@ function App() {
               </div>
 
               <p className="max-w-sm text-sm leading-7 text-zinc-500">
-                A selection of cybersecurity, digital forensics, penetration
-                testing, and software engineering work.
+                Practical work across cybersecurity, digital forensics,
+                penetration testing, and software engineering.
               </p>
             </div>
 
@@ -540,6 +628,7 @@ function App() {
             <div className="mt-14 grid gap-16 lg:grid-cols-2 lg:gap-24">
               <Timeline
                 title="Education"
+                icon={<GraduationCap size={20} />}
                 items={[
                   {
                     date: "2025 — PRESENT",
@@ -555,7 +644,8 @@ function App() {
                   {
                     date: "2013 — 2015",
                     title: "Certificate of Education",
-                    organization: "Horten Secondary School / Teachers College",
+                    organization:
+                      "Korogwe Teachers College",
                   },
                   {
                     date: "2009 — 2012",
@@ -572,6 +662,7 @@ function App() {
 
               <Timeline
                 title="Experience"
+                icon={<BriefcaseBusiness size={20} />}
                 items={[
                   {
                     date: "2026",
@@ -595,8 +686,8 @@ function App() {
                   },
                   {
                     date: "2018 — PRESENT",
-                    title: "Teaching",
-                    organization: "Kimembe Primary School",
+                    title: "Freelance IT Support & Software Development",
+                    organization: "Kilindi District & Kimembe Primary School",
                   },
                 ]}
               />
@@ -605,8 +696,11 @@ function App() {
         </section>
 
         {/* CONTACT */}
-        <section id="contact" className="relative overflow-hidden bg-[#090c10]">
-          <div className="pointer-events-none absolute right-0 top-0 h-[400px] w-[400px] rounded-full bg-cyan-400/[0.04] blur-[120px]" />
+        <section
+          id="contact"
+          className="relative overflow-hidden bg-[#090c10]"
+        >
+          <div className="pointer-events-none absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-cyan-400/[0.04] blur-[140px]" />
 
           <div className="relative mx-auto max-w-[1320px] px-5 py-24 sm:px-8 lg:py-32">
             <div className="grid gap-14 lg:grid-cols-[1fr_auto] lg:items-end">
@@ -616,7 +710,7 @@ function App() {
                 </p>
 
                 <h2 className="mt-7 max-w-4xl text-5xl font-bold leading-[0.9] tracking-[-0.06em] sm:text-7xl lg:text-8xl">
-                  Let’s build
+                  Let&apos;s build
                   <br />
                   something
                   <br />
@@ -624,7 +718,7 @@ function App() {
                 </h2>
               </div>
 
-              <div className="lg:min-w-[330px]">
+              <div className="lg:min-w-[350px]">
                 <p className="mb-5 text-sm leading-7 text-zinc-500">
                   Interested in cybersecurity, digital forensics, software
                   engineering, or collaboration?
@@ -635,29 +729,37 @@ function App() {
                   className="group flex items-center justify-between border-b border-white/20 pb-4 text-sm font-medium text-zinc-200 transition hover:border-cyan-400 hover:text-cyan-400"
                 >
                   rasuliomari4@gmail.com
+
                   <ArrowUpRight
                     size={17}
                     className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
                   />
                 </a>
+                <a
+                  href="tel:+255657707046"
+                  className="flex items-center gap-3 text-slate-300 transition hover:text-cyan-400"
+                >
+                  <Phone size={20} />
+                  <span>+255 657 707 046</span>
+                </a>
 
-                <div className="mt-6 flex gap-6 text-xs">
+                <div className="mt-6 flex flex-wrap gap-6 text-xs">
                   <a
                     href="https://github.com/rasuliomari"
                     target="_blank"
                     rel="noreferrer"
-                    className="text-zinc-500 transition hover:text-cyan-400"
+                    className="inline-flex items-center gap-2 text-zinc-500 transition hover:text-cyan-400"
                   >
-                    GitHub ↗
+                    <span className="text-xs font-bold">GH</span>
                   </a>
 
                   <a
                     href="https://www.linkedin.com/in/rasuli-omari-2807bb264/"
                     target="_blank"
                     rel="noreferrer"
-                    className="text-zinc-500 transition hover:text-cyan-400"
+                    className="inline-flex items-center gap-2 text-zinc-500 transition hover:text-cyan-400"
                   >
-                    LinkedIn ↗
+                   <span className="text-xs font-bold">in</span>
                   </a>
                 </div>
               </div>
@@ -724,33 +826,25 @@ function SectionTitle({
   );
 }
 
-/* STATUS BOX */
-function StatusBox({
-  label,
-  value,
+/* FOCUS ITEM */
+function FocusItem({
+  icon,
+  title,
+  text,
 }: {
-  label: string;
-  value: string;
+  icon: React.ReactNode;
+  title: string;
+  text: string;
 }) {
   return (
-    <div className="border border-white/[0.08] bg-white/[0.015] p-3">
-      <div className="text-[8px] tracking-[0.15em] text-zinc-600">
-        {label}
+    <div className="group border border-white/[0.08] bg-[#07090c] p-5 transition hover:border-cyan-400/30">
+      <div className="flex items-center gap-3 text-cyan-400">
+        {icon}
+
+        <h3 className="text-sm font-semibold text-zinc-200">{title}</h3>
       </div>
 
-      <div className="mt-2 text-[9px] text-cyan-400">
-        ● {value}
-      </div>
-    </div>
-  );
-}
-
-/* SKILL LINE */
-function SkillLine({ name }: { name: string }) {
-  return (
-    <div className="flex items-center gap-3 text-zinc-400">
-      <span className="text-cyan-400">›</span>
-      {name}
+      <p className="mt-3 text-xs leading-6 text-zinc-500">{text}</p>
     </div>
   );
 }
@@ -779,9 +873,11 @@ function Stat({
 /* TIMELINE */
 function Timeline({
   title,
+  icon,
   items,
 }: {
   title: string;
+  icon: React.ReactNode;
   items: {
     date: string;
     title: string;
@@ -790,7 +886,11 @@ function Timeline({
 }) {
   return (
     <div>
-      <h3 className="mb-8 text-xl font-semibold">{title}</h3>
+      <div className="mb-8 flex items-center gap-3">
+        <span className="text-cyan-400">{icon}</span>
+
+        <h3 className="text-xl font-semibold">{title}</h3>
+      </div>
 
       <div className="border-l border-white/[0.1]">
         {items.map((item) => (
@@ -798,7 +898,7 @@ function Timeline({
             key={`${item.date}-${item.title}`}
             className="relative pb-9 pl-7 last:pb-0"
           >
-            <span className="absolute -left-[4px] top-1.5 h-2 w-2 bg-cyan-400" />
+            <span className="absolute -left-[4px] top-1.5 h-2 w-2 bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.6)]" />
 
             <div className="font-mono text-[9px] font-semibold tracking-[0.18em] text-cyan-400">
               {item.date}
